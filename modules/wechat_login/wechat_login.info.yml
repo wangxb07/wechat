@@ -1,0 +1,9 @@
+name: 'Wechat Login'
+type: module
+description: 'Wechat login supports'
+core: 8.x
+package: 'Wechat'
+dependencies:
+  - wechat
+  - social_auth
+  - simple_oauth

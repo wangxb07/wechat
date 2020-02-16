@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains wechat_rules.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function wechat_rules_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the wechat_rules module.
+    case 'help.page.wechat_rules':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provide rules support') . '</p>';
+      return $output;
+
+    default:
+  }
+}

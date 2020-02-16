@@ -1,0 +1,17 @@
+
+wechat_coupon.default_controller_bind_coupon:
+  path: '/wechat_coupon/bindCoupon'
+  defaults:
+    _controller: '\Drupal\wechat_coupon\Controller\DefaultController::bindCoupon'
+    _title: 'bind coupon to wechat card'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+wechat_coupon.default_controller_generate_coupon:
+  path: '/wechat_coupon/generateCoupon'
+  defaults:
+    _controller: '\Drupal\wechat_coupon\Controller\DefaultController::generateCoupon'
+    _title: 'to generate new coupon'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,7 @@
+name: 'wechat_coupon'
+type: module
+description: 'wechat coupon'
+core: 8.x
+package: 'Wechat'
+dependencies:
+  - wechat

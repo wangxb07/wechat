@@ -1,0 +1,10 @@
+services:
+  wechat_login.access_token_issuer:
+    class: Drupal\wechat_login\AccessTokenIssuer
+    arguments: [
+      '@entity_type.manager',
+      '@simple_oauth.repositories.client',
+      '@simple_oauth.repositories.access_token',
+      '@simple_oauth.repositories.refresh_token',
+      '@simple_oauth.repositories.scope',
+      '@config.factory']

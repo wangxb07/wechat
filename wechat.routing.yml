@@ -1,0 +1,8 @@
+wechat.client_controller_get_ui_config:
+  path: '/wechat/ui-config'
+  defaults:
+    _controller: '\Drupal\wechat\Controller\ClientController:getUiConfig'
+    _title: 'get client ui config'
+  requirements:
+    _permission: 'access content'
+    _format: 'json'

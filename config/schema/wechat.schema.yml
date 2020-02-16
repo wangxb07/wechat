@@ -1,0 +1,12 @@
+# Schema for the configuration files of the Wechat module.
+
+wechat.*:
+  type: config_object
+  label: 'Wechat provider config'
+  mapping:
+    app_id:
+      type: string
+      label: "The app id for the wechat provider"
+    secret:
+      type: string
+      label: "The secret for the wechat provider"

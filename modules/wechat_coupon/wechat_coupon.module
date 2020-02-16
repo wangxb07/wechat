@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains wechat_coupon.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function wechat_coupon_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the wechat_coupon module.
+    case 'help.page.wechat_coupon':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('wechat coupon') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function wechat_coupon_theme() {
+  return [
+    'wechat_coupon' => [
+      'render element' => 'children',
+    ],
+  ];
+}

@@ -1,0 +1,27 @@
+wechat_login.wechat_login_settings_form:
+  path: '/admin/config/social-api/social-auth/wechat_mini_program'
+  defaults:
+    _form: '\Drupal\wechat_login\Form\WechatLoginSettingsForm'
+    _title: 'WechatLoginSettingsForm'
+  requirements:
+    _access: 'TRUE'
+
+wechat_login.phone_quick_login:
+  path: '/auth/wechat_phone_quick_login'
+  defaults:
+    _controller: '\Drupal\wechat_login\Controller\WechatLoginAuthController::phoneQuickLogin'
+    _title: 'User authenticate by wechat mini program phone'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+wechat_login.login_by_code:
+  path: '/auth/wechat_login_by_code'
+  defaults:
+    _controller: '\Drupal\wechat_login\Controller\WechatLoginAuthController::loginByCode'
+    _title: 'User authenticate by wechat code'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'

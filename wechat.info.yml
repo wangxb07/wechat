@@ -1,0 +1,7 @@
+name: 'Wechat'
+type: module
+description: 'Integration wechat features to drupal'
+core: 8.x
+package: 'Wechat'
+dependencies:
+  - yaml_editor

@@ -1,0 +1,116 @@
+wechat.wechat_merchant.*:
+  type: config_entity
+  label: 'Wechat merchant config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    mini_program_app_id:
+      type: string
+    mini_program_secret:
+      type: string
+    official_account_app_id:
+      type: string
+    official_account_secret:
+      type: string
+    ui_config:
+      type: config_object
+      mapping:
+        qqmapsdkKey:
+          type: string
+          label: 'qqmapsdkKey'
+          wxpayEnabled:
+            type: string
+            label: 'wxpayEnabled'
+          home:
+            type: mapping
+            label: 'wxa_config_home'
+            mapping:
+              banners:
+                type: mapping
+                label: 'banners'
+                mapping:
+                  tid:
+                    type: string
+                    label: 'tid'
+              catalogIconPath:
+                type: string
+                label: 'catalogIconPath'
+              catalogItems:
+                type: mapping
+                label: 'catalogItems'
+              components:
+                type: mapping
+                label: 'components'
+              productListHide:
+                type: string
+                label: 'catalogIconPath'
+              productListTitle:
+                type: string
+                label: 'productListTitle'
+              productListSubTitle:
+                type: string
+                label: 'productListSubTitle'
+              showOverlayMessage:
+                type: string
+                label: 'showOverlayMessage'
+              overlayMessageImage:
+                type: string
+                label: 'overlayMessageImage'
+              overlayMessageLink:
+                type: string
+                label: 'overlayMessageLink'
+
+
+          product:
+            type: mapping
+            label: 'product'
+            mapping:
+              allowPreviewImage:
+                type: string
+                label: 'allowPreviewImage'
+          checkout:
+            type: mapping
+            label: 'checkout'
+            mapping:
+              allowPendingRequest:
+                type: boolean
+                label: 'allowPendingRequest'
+          topMessage:
+            type: mapping
+            label: 'topMessage'
+            mapping:
+              nodes:
+                type: mapping
+                label: 'nodes'
+                mapping:
+                  name:
+                    type: string
+                    label: 'name'
+                  attrs:
+                    type: mapping
+                    label: 'attrs'
+                    mapping:
+                      class:
+                        type: string
+                        label: 'class'
+                      style:
+                        type: string
+                        label: 'style'
+                  children:
+                    type: mapping
+                    label: 'children'
+                    mapping:
+                      type:
+                        type: string
+                        label: 'type'
+                      text:
+                        type: text
+                        label: 'text'
+
+

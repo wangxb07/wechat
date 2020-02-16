@@ -1,0 +1,5 @@
+entity.wechat_merchant.add_form:
+  route_name: entity.wechat_merchant.add_form
+  title: 'Add Wechat merchant'
+  appears_on:
+    - entity.wechat_merchant.collection

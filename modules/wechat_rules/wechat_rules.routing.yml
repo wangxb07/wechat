@@ -1,0 +1,7 @@
+wechat_rules.receiver_controller_receive:
+  path: '/wechat_rules/receive'
+  defaults:
+    _controller: '\Drupal\wechat_rules\Controller\ReceiverController::receive'
+    _title: 'Wechat event receiver'
+  requirements:
+    _permission: 'access content'

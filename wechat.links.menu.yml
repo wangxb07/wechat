@@ -1,0 +1,7 @@
+# Wechat merchant menu items definition
+entity.wechat_merchant.collection:
+  title: 'Wechat merchant'
+  route_name: entity.wechat_merchant.collection
+  description: 'List Wechat merchant (bundles)'
+  parent: system.admin_structure
+  weight: 99

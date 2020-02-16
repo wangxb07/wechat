@@ -1,0 +1,26 @@
+services:
+  logger.channel.wechat:
+    parent: logger.channel_base
+    arguments: ['wechat']
+  wechat.official_account:
+    class: Drupal\wechat\WechatApp
+    arguments: ['official_account']
+  wechat.mini_program:
+    class: Drupal\wechat\WechatApp
+    arguments: ['mini_program']
+  wechat.open_platform:
+    class: Drupal\wechat\WechatApp
+    arguments: ['open_platform']
+  wechat.work:
+    class: Drupal\wechat\WechatApp
+    arguments: ['work']
+  wechat.open_work:
+    class: Drupal\wechat\WechatApp
+    arguments: ['open_work']
+  wechat.payment:
+    class: Drupal\wechat\WechatApp
+    arguments: ['payment']
+  wechat.factory:
+    class: Drupal\wechat\WechatFactory
+    arguments: []
+

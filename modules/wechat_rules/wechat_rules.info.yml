@@ -1,0 +1,7 @@
+name: 'Wechat Rules'
+type: module
+description: 'Provide rules support'
+core: 8.x
+package: 'Wechat'
+dependencies:
+  - wechat

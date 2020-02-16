@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains wechat_login.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function wechat_login_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the wechat_login module.
+    case 'help.page.wechat_login':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Wechat login supports') . '</p>';
+      return $output;
+
+    default:
+  }
+}

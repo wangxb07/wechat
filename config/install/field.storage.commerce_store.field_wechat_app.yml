@@ -1,0 +1,20 @@
+uuid: 9bbd3daa-ef90-4a73-b8bd-b5563298f201
+langcode: zh-hans
+status: true
+dependencies:
+  module:
+    - commerce_store
+    - wechat
+id: commerce_store.field_wechat_app
+field_name: field_wechat_app
+entity_type: commerce_store
+type: entity_reference
+settings:
+  target_type: wechat_merchant
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
