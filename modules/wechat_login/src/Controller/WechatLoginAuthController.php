@@ -10,8 +10,8 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\TempStore\TempStoreException;
 use Drupal\social_auth\User\UserAuthenticator;
-use Drupal\wechat\WechatApp;
-use Drupal\wechat\WechatFactory;
+use Drupal\wechat\Service\WechatApp;
+use Drupal\wechat\Service\WechatFactory;
 use Drupal\wechat_login\AccessTokenIssuer;
 use EasyWeChat\Kernel\Exceptions\DecryptException;
 use EasyWeChat\MiniProgram\Encryptor;
@@ -228,22 +228,8 @@ class WechatLoginAuthController extends ControllerBase {
   }
 
   private function getWechatInstance(Request $request, string $type = 'mini_program') {
-    //通过store拿到app_id
-    $storeUuid = $request->headers->get('X-BEEHPLUS-STORE-ID');
-    $store = $this->storeStorage->loadByProperties([
-      'uuid' => $storeUuid
-    ]);
-    if (empty($store)) {
-      //TODO:暂时做兼容处理
-      $appId = $storeUuid;
-    }else{
-      $store = current($store);
-      $wechatAppConfig = $store->get('field_wechat_app')->referencedEntities();
-      if (!empty($wechatAppConfig)) {
-        $wechatAppConfig = current($wechatAppConfig);
-      }
-      $appId = $wechatAppConfig->getMiniProgramAppId();
-    }
+    $wechatMerchant = $this->wechatFactory->getWechatMerchantByRequest($request,$type);
+    $appId = $wechatMerchant->getMiniProgramAppId();
 
     $this->userAuthenticator->setPluginId('social_auth_wechat_mini_program' . PluginBase::DERIVATIVE_SEPARATOR . $appId);
     $this->appId = $appId;
