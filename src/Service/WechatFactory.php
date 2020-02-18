@@ -54,20 +54,17 @@ class WechatFactory implements WechatFactoryInterface {
     if (empty($storeUuid)) {
       throw new HttpException(422, 'store uuid is required.');
     }
-    $store = $this->storeStorage->loadByProperties([
-      'uuid' => $storeUuid
-    ]);
-    //如果store存在，这个type参数便是无用的，直接返回wechatMerchant
-    if (!empty($store)) {
-      $store = current($store);
-      $wechatMerchant = $store->get('field_wechat_app')->referencedEntities();
-      return current($wechatMerchant);
-    } else {
-      //TODO:暂时做兼容处理,假设传入的有可能是appId,获取wechatMerchat的方式有可能会改变
-      $wechatMerchant = $this->wechatMerchant->loadByProperties([
-        $type . '_app_id' => $storeUuid
-      ]);
+    $wechatMerchant = \Drupal::service('store.factory')->getWechatMerchantByStoreUuid($storeUuid);
+
+    //如果通过store找到了商户，那么这个type参数便是无用的，直接返回wechatMerchant
+    if (!empty($wechatMerchant)) {
+      return $wechatMerchant;
     }
+
+    //TODO:暂时做兼容处理,假设传入的有可能是appId,获取wechatMerchat的方式有可能会改变
+    $wechatMerchant = $this->wechatMerchant->loadByProperties([
+      $type . '_app_id' => $storeUuid
+    ]);
 
     if (empty($wechatMerchant)) {
       throw new HttpException(422, 'this wechat merchant is not exist.');

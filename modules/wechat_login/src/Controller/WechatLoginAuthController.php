@@ -33,7 +33,6 @@ class WechatLoginAuthController extends ControllerBase {
   private $userAuthenticator;
   private $tempStore;
   private $appId;
-  private $storeStorage;
   /**
    * @var AccessTokenIssuer
    */
@@ -61,7 +60,6 @@ class WechatLoginAuthController extends ControllerBase {
     $this->userAuthenticator = $user_authenticator;
     $this->messenger = $messenger;
     $this->tempStore = $temp_store_factory->get('wechat_login');
-    $this->storeStorage = $entity_type_manager->getStorage('commerce_store');
     $this->wechatFactory = $wechat_factory;
     $this->tokenIssuer = $tokenIssuer;
   }

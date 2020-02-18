@@ -1,0 +1,13 @@
+{
+    "name": "wechat_store",
+    "type": "drupal-module",
+    "description": "wechat store",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/wechat_store",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/wechat_store",
+        "source": "http://cgit.drupalcode.org/wechat_store",
+    },
+}

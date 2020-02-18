@@ -1,0 +1,7 @@
+services:
+  logger.channel.wechat_store:
+    parent: logger.channel_base
+    arguments: ['wechat_store']
+  store.factory:
+    class: Drupal\wechat_store\Service\StoreFactory
+    arguments: []

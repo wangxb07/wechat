@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains wechat_store.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function wechat_store_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the wechat_store module.
+    case 'help.page.wechat_store':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('wechat store') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function wechat_store_theme() {
+  return [
+    'wechat_store' => [
+      'render element' => 'children',
+    ],
+  ];
+}
