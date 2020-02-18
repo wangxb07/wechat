@@ -1,0 +1,8 @@
+name: 'Wechat Store'
+type: module
+description: 'Wechat store supports'
+core: 8.x
+package: 'Wechat'
+dependencies:
+  - wechat
+  - commerce_store

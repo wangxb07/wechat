@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\wechat;
+namespace Drupal\wechat\Service;
 
 /**
  * Interface WechatAppInterface.
